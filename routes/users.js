@@ -31,7 +31,7 @@ router.get('/:id', function(req, res) {
 
       console.log(user);
       // res.send(user)
-      res.render('/users/show.hbs', {user: user});
+      res.render('users/show', {user: user});
     });
 });
 
