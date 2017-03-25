@@ -18,13 +18,30 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post('/', function(req, res,) {
+//SIGN UP: create a GET "/signup" that simply renders the signup page
+router.get('/signup', function(req, res){
+  res.render('users/signup.hbs');
+});
+
+//Show User
+router.get('/:id', function(req, res) {
+  User.findById(req.params.id)
+    .exec(function(err, user) {
+      if(err) console.log(err);
+
+      console.log(user);
+      // res.send(user)
+      res.render('/users/show.hbs', {user: user});
+    });
+});
+
+router.post('/', function(req, res) {
   var user = new User({
     username: req.body.username,
     email: req.body.email,
     password_digest: res.hashedPassword
   });
-  user.save(function(err user){
+  user.save(function(err, user){
     if(err) console.log(err);
     console.log(user);
     res.redirect('/users');
