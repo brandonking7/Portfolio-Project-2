@@ -18,4 +18,17 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.post('/', function(req, res,) {
+  var user = new User({
+    username: req.body.username,
+    email: req.body.email,
+    password_digest: res.hashedPassword
+  });
+  user.save(function(err user){
+    if(err) console.log(err);
+    console.log(user);
+    res.redirect('/users');
+  });
+});
+
 module.exports = router;
