@@ -8,6 +8,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var methodOverride = require('method-override');
+var db = require('./db');
+
+mongoose.connect('mongodb://localhost/portfolio-project-2');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
