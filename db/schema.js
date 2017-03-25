@@ -3,6 +3,11 @@ var Schema = mongoose.Schema;
 
 mongoose.promise = global.Promise;
 
+var PostSchema = new Schema({
+  name: String,
+  description: String
+});
+
 var UserSchema = new Schema({
   first_name: String,
   last_name: String,
@@ -10,7 +15,8 @@ var UserSchema = new Schema({
   email: String,
   password_digest: String,
   created_at: Date,
-  updated_at: Date
+  updated_at: Date,
+  post: [PostSchema]
 });
 
 UserSchema.pre('save', function(next) {
@@ -27,7 +33,9 @@ UserSchema.virtual('fullName').get(function () {
 });
 
 var UserModel = mongoose.model('User', UserSchema);
+var PostModel = mongoose.model('User', PostSchema);
 
 module.exports = {
-  User: UserModel
+  User: UserModel,
+  Post: PostModel
 };
