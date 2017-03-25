@@ -11,7 +11,10 @@ router.get('/', function(req, res, next) {
     if(err) console.log(err);
 
     console.log(users);
-    res.send(users);
+    // res.send(users);
+    res.render('users/index', {
+      users: users
+    });
   });
 });
 
