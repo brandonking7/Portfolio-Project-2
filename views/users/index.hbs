@@ -1,8 +1,6 @@
 {{#if currentUser}}
   <h4>welcome {{currentUser.username}}</h4>
   <a href="/users/{{currentUser._id}}">My Profile</a>
-
-
 {{/if}}
 <nav>
   <li><form action="/">
@@ -10,14 +8,15 @@
       </form>
   </li>
 </nav>
+
 <h1>Feed</h1>
 
-
 <ol>
-  {{#each users}}
-
+  {{#users}}
     <h1><a href="/users/{{this.id}}">{{this.fullName}}</a></h1>
-    <!-- <h3>{{this.email}}</h3> -->
-
-  {{/each}}
+    {{#this.posts}}
+      <li>{{this.name}}</li>
+      <li>{{this.description}}</li>
+    {{/this.posts}}
+  {{/users}}
 </ol>
