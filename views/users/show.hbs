@@ -3,7 +3,10 @@
 
 <a href="/users" class="btn btn-default">Main Page</a>
 <a href="/users/{{user.id}}/edit" class="btn btn-danger">Edit Profile</a>
+<a href="/users/{{user.id}}/posts" class="btn btn-default">My Post</a>
+
 <form method="post" action="/sessions/remove_?method=DELETE">
-<input type="submit" value="LOG OUT"/>
+<div>
+  <input type="submit" class="btn btn-default" value="LOG OUT"/>
+</div>
 </form>
-<a href="/users/{{user.id}}/posts">My Post</a>

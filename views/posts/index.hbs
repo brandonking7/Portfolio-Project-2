@@ -7,11 +7,12 @@
   <body>
     <h2>{{user.first_name}}'s Posts!</h2>
     <ul>
+      <a href="/users/{{user.id}}/posts/new" class="btn btn-default">New Post</a>
       {{#each user.posts}}
         <li><a href="/users/{{../user.id}}/posts/{{this.id}}">{{this.name}}</a></li>
         <li>{{this.description}}</li>
       {{/each}}
-      <a href="/users/{{user.id}}/posts/new">New Post</a>
+
     </ul>
   </body>
 </html>
