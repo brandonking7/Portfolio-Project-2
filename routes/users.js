@@ -25,7 +25,6 @@ router.get('/signup', function(req, res){
 });
 
 //Edit User
-
 router.get("/:id/edit", function(req, res) {
   User.findById(req.params.id)
     .exec(function(err, user) {
@@ -34,6 +33,23 @@ router.get("/:id/edit", function(req, res) {
         user: user
       });
     });
+});
+
+//Updates Users Router/Info
+router.put('/:id', function(req, res){
+  User.findByIdAndUpdate(req.params.id, {
+    first_name: req.body.firstname,
+    last_name: req.body.lastname,
+    email: req.body.email
+  }, { new: true })
+  .exec(function(err, user){
+    if (err) { console.log(err); }
+    console.log(user);
+    res.render('users/show.hbs', {
+      user: user
+
+    });
+  });
 });
 
 //SHOW: create a GET "/:id" route that shows the page ONLY IF it's the current user's session. Else, redirect to an error page that says "Oops! You are not authorized."
