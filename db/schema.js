@@ -16,7 +16,8 @@ var UserSchema = new Schema({
   password_digest: String,
   created_at: Date,
   updated_at: Date,
-  posts: [PostSchema]
+  posts: [PostSchema],
+  // favorites: [PostSchema]
 });
 
 UserSchema.pre('save', function(next) {

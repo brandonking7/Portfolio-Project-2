@@ -13,12 +13,9 @@ router.post('/login', authHelpers.loginUser, function(req, res){
   res.redirect('/users');
 });
 
-router.post('/profile', authHelpers.authorized, function(req, res){
-  // res.redirect('/users/' + req.session.currentUser._id);
-  res.redirect('/users');
-});
 
-router.delete('/remove', function(req, res){
+
+router.delete('/', function(req, res){
   req.session.destroy(function(){
     res.redirect('/');
   });
