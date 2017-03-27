@@ -48,15 +48,52 @@ router.put('/:id', function updatePost(req, res){
     });
 });
 
+// NEW
+
+router.get('/new', function newPost(req, res){
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err) }
+      res.render('posts/new', {
+        user: user
+      });
+    });
+});
+
+// CREATE
+
+router.post('/', function createPost(req, res){
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err); }
+
+      const newPost = {
+
+        name: req.body.name,
+        description: req.body.description
+
+      }
+
+      user.posts.push(newPost)
+
+      user.save(function (err) {
+        if (err) console.log(err);
+        console.log('Post created!')
+      });
+
+      res.redirect('/posts/show')
+    });
+});
+
 // SHOW
 
 router.get('/:id', function showPost(req, res) {
   User.findById(req.params.userId)
     .exec(function (err, user){
       if (err) { console.log(err); }
-      const projectIdea = user.proj.id(req.params.id);
-      res.render('project_ideas/show', {
-        projectIdea: projectIdea,
+      const post = user.posts.id(req.params.id);
+      res.render('posts/show', {
+        post: post,
         user: user
       });
     });
