@@ -14,6 +14,7 @@ mongoose.connect('mongodb://localhost/portfolio-project-2');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var sessions = require('./routes/sessions')
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use(session({
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/sessions', sessions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

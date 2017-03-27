@@ -33,7 +33,7 @@ UserSchema.virtual('fullName').get(function () {
 });
 
 var UserModel = mongoose.model('User', UserSchema);
-var PostModel = mongoose.model('User', PostSchema);
+var PostModel = mongoose.model('Post', PostSchema);
 
 module.exports = {
   User: UserModel,

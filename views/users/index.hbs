@@ -1,10 +1,22 @@
-<h1>My Profile</h1>
+{{#if currentUser}}
+  <h4>welcome {{currentUser.username}}</h4>
+  <a href="/users/{{currentUser._id}}">My Profile</a>
 
+
+{{/if}}
+<h1>Feed</h1>
+
+<nav>
+  <li><form action="/">
+        <button>logout</button>
+      </form>
+  </li>
+</nav>
 <ol>
   {{#each users}}
-  <li>
-    <h1>{{this.fullName}}</h1>
-    <h3>{{this.email}}</h3>
-  </li>
+
+    <h1><a href="/users/{{this.id}}">{{this.fullName}}</a></h1>
+    <!-- <h3>{{this.email}}</h3> -->
+
   {{/each}}
 </ol>
