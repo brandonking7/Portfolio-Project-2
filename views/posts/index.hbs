@@ -2,9 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Posts</title>
   </head>
   <body>
-
+    <h2>{{user.first_name}}'s Posts!</h2>
+    <ul>
+      {{#each user.posts}}
+        <li><a href="/users/{{../user.id}}/posts/{{this.id}}">{{this.name}}</a></li>
+        <li>{{this.description}}</li>
+      {{/each}}
+      <a href="/users/{{user.id}}/posts/new">New Post</a>
+    </ul>
   </body>
 </html>

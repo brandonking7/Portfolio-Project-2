@@ -10,13 +10,16 @@ var session = require('express-session');
 var methodOverride = require('method-override');
 var db = require('./db');
 
+var app = express();
+
 mongoose.connect('mongodb://localhost/portfolio-project-2');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var sessions = require('./routes/sessions')
+var sessions = require('./routes/sessions');
+var posts = require('./routes/posts');
 
-var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +41,7 @@ app.use(session({
 app.use('/', index);
 app.use('/users', users);
 app.use('/sessions', sessions);
+app.use('/users/:userId/posts', posts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
