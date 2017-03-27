@@ -81,7 +81,7 @@ router.post('/', function createPost(req, res){
         console.log('Post created!')
       });
 
-      res.redirect('/posts/show')
+      res.redirect('/users')
     });
 });
 
