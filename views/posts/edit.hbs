@@ -6,13 +6,19 @@
   </head>
   <body>
     <h1>Edit Post</h1>
-      <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name" value="{{post.name}}"/>
-      </div>
-      <div>
-        <label for="description">Description: </label>
-        <input type="text" name="description" value="{{post.description}}">
-      </div>
+      <form class="" action="/users/{{user.id}}/posts/{{post.id}}?_method=PUT" method="POST">
+        <div>
+          <label for="name">Name: </label>
+          <input type="text" name="name" value="{{post.name}}"/>
+        </div>
+        <div>
+          <label for="description">Description: </label>
+          <input type="text" name="description" value="{{post.description}}">
+        </div>
+        <div>
+          <input type="submit" class="btn btn-default" value="Update Post">
+
+        </div>
+      </form>
     </body>
 </html>
