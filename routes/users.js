@@ -24,6 +24,18 @@ router.get('/signup', function(req, res){
   res.render('users/signup.hbs');
 });
 
+//Edit User
+
+router.get("/:id/edit", function(req, res) {
+  User.findById(req.params.id)
+    .exec(function(err, user) {
+      if(err) {console.log(err);}
+      res.render("users/edit", {
+        user: user
+      });
+    });
+});
+
 //SHOW: create a GET "/:id" route that shows the page ONLY IF it's the current user's session. Else, redirect to an error page that says "Oops! You are not authorized."
 router.get("/:id", authHelpers.authorized, function(req, res) {
   User.findById(req.params.id)

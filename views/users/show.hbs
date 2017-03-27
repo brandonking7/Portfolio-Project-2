@@ -2,6 +2,7 @@
 <h3>{{user.fullName}}</h3>
 
 <a href="/users" class="btn btn-default">Main Page</a>
+<a href="/users/{{user.id}}/edit" class="btn btn-danger">Edit Profile</a>
 <form method="post" action="/sessions/remove_?method=DELETE">
 <input type="submit" value="LOG OUT"/>
 </form>
