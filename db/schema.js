@@ -17,7 +17,7 @@ var UserSchema = new Schema({
   created_at: Date,
   updated_at: Date,
   posts: [PostSchema],
-  // favorites: [PostSchema]
+  favorites: [PostSchema]
 });
 
 UserSchema.pre('save', function(next) {

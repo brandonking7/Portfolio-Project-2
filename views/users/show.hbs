@@ -6,7 +6,15 @@
 <a href="/users/{{user.id}}/posts" class="btn btn-default">My Post</a>
 
 <form method="post" action="/sessions/?_method=DELETE">
-<div>
-  <input type="submit" class="btn btn-default" value="LOG OUT"/>
-</div>
+  <div>
+    <input type="submit" class="btn btn-default" value="LOG OUT"/>
+  </div>
 </form>
+
+<ul>
+  {{#this.favorites}}
+    <li><a href="/users/{{this.id}}">{{this.first_name}}</a></li>
+    <li>{{this.email}}</li>
+    <br/>
+  {{/this.favorites}}
+</ul>

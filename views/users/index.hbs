@@ -13,10 +13,13 @@
 
 <ol>
   {{#users}}
-    <h1><a href="/users/{{this.id}}">{{this.fullName}}</a></h1>
-    {{#this.posts}}
-      <li>{{this.name}}</li>
-      <li>{{this.description}}</li>
-    {{/this.posts}}
+    <h1><a href="/users/{{id}}">{{fullName}}</a></h1>
+    {{#posts}}
+      <li><a href="/users/{{../id}}/posts/{{id}}">{{name}}</a></li>
+      <li><a href="#">{{description}}</a></li>
+      <!-- <li>{{name}}</li>
+      <li>{{description}}</li> -->
+      <a href="/users/{{user.id}}/posts/{{id}}" class="btn btn-default">Favorite</a>
+    {{/posts}}
   {{/users}}
 </ol>
