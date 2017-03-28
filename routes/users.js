@@ -10,10 +10,17 @@ router.get('/', function(req, res, next) {
   .exec(function(err, users) {
     if(err) console.log(err);
 
-    console.log(users);
+    // var postsArray = []
+    //
+    // users.forEach {
+    //   postsArray.push(user.posts)
+    // }
+
+    // postArray.sort by created_at
     // res.send(users);
     res.render('users/index', {
       users: users,
+      // posts: postsArray,
       currentUser: req.session.currentUser
     });
   });
