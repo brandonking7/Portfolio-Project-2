@@ -5,7 +5,10 @@ mongoose.promise = global.Promise;
 
 var PostSchema = new Schema({
   name: String,
-  description: String
+  description: String,
+  image: String,
+  created_at: Date,
+  updated_at: Date
 });
 
 var UserSchema = new Schema({
@@ -19,6 +22,16 @@ var UserSchema = new Schema({
   posts: [PostSchema],
   favorites: [PostSchema]
 });
+
+PostSchema.pre('save', function(next) {
+  now = new Date();
+  this.updated_at = now;
+  if ( !this.created_at ) {
+      this.created_at = now;
+  }
+  next();
+});
+
 
 UserSchema.pre('save', function(next) {
   now = new Date();

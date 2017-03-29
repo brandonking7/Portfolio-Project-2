@@ -39,6 +39,7 @@ router.put('/:id', function updatePost(req, res){
 
       post.name = req.body.name,
       post.description = req.body.description,
+      post.image = req.body.image
       user.save();
 
       res.render('posts/show', {
@@ -70,7 +71,8 @@ router.post('/', function createPost(req, res){
       const newPost = {
 
         name: req.body.name,
-        description: req.body.description
+        description: req.body.description,
+        image: req.body.image
 
       }
 

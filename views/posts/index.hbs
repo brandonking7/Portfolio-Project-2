@@ -11,6 +11,7 @@
       {{#each user.posts}}
         <li><a href="/users/{{../user.id}}/posts/{{this.id}}">{{this.name}}</a></li>
         <li>{{this.description}}</li>
+        <li><img src="{{this.image}}"></li>
       {{/each}}
 
     </ul>
