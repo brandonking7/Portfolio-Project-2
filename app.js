@@ -1,5 +1,6 @@
 pry = require('pryjs');
 var express = require('express');
+require('dotenv').config();
 var mongoose = require('mongoose');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -12,7 +13,8 @@ var db = require('./db');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/portfolio-project-2');
+// mongoose.connect('mongodb://localhost/portfolio-project-2');
+mongoose.connect(process.env.MONGODB_URI);
 
 var index = require('./routes/index');
 var users = require('./routes/users');
