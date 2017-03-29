@@ -57,10 +57,17 @@ ol {
 
 img {
   height: 225px;
-  width: 250px;
+  width: 265px;
   border-radius: 3px;
 }
 
+#red {
+  background-color: red;
+}
+
+#over {
+  margin-left: 10px;
+}
 
 .mc-button {
   background-color: #212121;

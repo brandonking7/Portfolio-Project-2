@@ -16,7 +16,7 @@
         <div class="navbar-fixed">
           <nav id="nc" class="nav-color">
             <div class="nav-wrapper">
-              <a href="/users" class="left">Cars</a>
+              <a href="/users" id="over" class="left">Cars</a>
               <ul class="right hide-on-med-and-down">
                 <!-- <li><a href="/users/">Signup</a></li>
                 <li><a href="/users/{{currentUser._id}}">Home</a></li> -->
@@ -29,16 +29,17 @@
         </div>
     </header>
     <div>
-      <h1>Name: {{post.name}}</h1>
+      <h3>Name: {{post.name}}</h3>
       <img id="post" src="{{post.image}}">
 
       <p>Description: {{post.description}}</p>
 
       <a href="/users/{{user.id}}/posts/{{post.id}}/edit" class="btn btn-default">Edit Post</a>
     </div>
+    <br>
 
       <form action="/users/{{user.id}}/posts/{{post.id}}?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Post"/>
+        <input id="red" class="btn btn-danger" type="submit" value="Delete Post"/>
       </form>
 
     </body>
