@@ -19,6 +19,11 @@ body {
   background-color: white;
 }*/
 
+#usern {
+  font-size: 1.5em;
+  color: white;
+}
+
 #post {
   height: 525px;
   width: 600px;
