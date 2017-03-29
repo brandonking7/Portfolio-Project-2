@@ -101,5 +101,25 @@ router.get('/:id', function showPost(req, res) {
     });
 });
 
+// DELETE
+
+router.delete('/:id', function deletePost(req, res) {
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err); }
+
+      user.posts.id(req.params.id).remove();
+
+      user.save(function (err) {
+        if (err) console.log(err);
+        console.log('Post was deleted!')
+      });
+
+      res.render('posts/index', {
+        user: user
+      });
+    });
+    });
+
 
 module.exports = router;

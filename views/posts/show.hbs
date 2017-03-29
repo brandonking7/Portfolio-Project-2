@@ -5,12 +5,41 @@
     <title></title>
   </head>
   <body>
+    <header>
+      <ul id="dropdown1" class="dropdown-content">
+          <li><a href="/users/{{currentUser._id}}">My Profile</a></li>
+          <li><a href="/users/{{currentUser._id}}/posts">My Post</a></li>
+          <li class="divider"></li>
+          <li><a href="/">Log out</a></li>
+        </ul>
+
+        <div class="navbar-fixed">
+          <nav id="nc" class="nav-color">
+            <div class="nav-wrapper">
+              <a href="#!" class="left">Posts</a>
+              <ul class="right hide-on-med-and-down">
+                <!-- <li><a href="/users/">Signup</a></li>
+                <li><a href="/users/{{currentUser._id}}">Home</a></li> -->
+                <li><a href="/users/{{currentUser._id}}">Home</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{currentUser.first_name}}<i class="material-icons right">arrow_drop_down</i></a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+    </header>
     <div>
-      <a href="/users/{{user.id}}/posts/{{post.id}}/edit" class="btn btn-default">Edit Post</a>
       <h1>Name: {{post.name}}</h1>
-      <h3>Description: {{post.description}}</h3>
       <img src="{{post.image}}">
+
+      <h3>Description: {{post.description}}</h3>
+
+      <a href="/users/{{user.id}}/posts/{{post.id}}/edit" class="btn btn-default">Edit Post</a>
     </div>
-    
+
+      <form action="/users/{{user.id}}/posts/{{post.id}}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Post"/>
+      </form>
+
     </body>
 </html>

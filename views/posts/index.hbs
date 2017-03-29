@@ -5,15 +5,47 @@
     <title>Posts</title>
   </head>
   <body>
-    <h2>{{user.first_name}}'s Posts!</h2>
-    <ul>
-      <a href="/users/{{user.id}}/posts/new" class="btn btn-default">New Post</a>
-      {{#each user.posts}}
-        <li><a href="/users/{{../user.id}}/posts/{{this.id}}">{{this.name}}</a></li>
-        <li>{{this.description}}</li>
-        <li><img src="{{this.image}}"></li>
-      {{/each}}
+    <header>
+      <ul id="dropdown1" class="dropdown-content">
+          <li><a href="/users/{{currentUser._id}}">My Profile</a></li>
+          <li><a href="/users/{{currentUser._id}}/posts">My Post</a></li>
+          <li class="divider"></li>
+          <li><a href="/">Log out</a></li>
+        </ul>
 
-    </ul>
+        <div class="navbar-fixed">
+          <nav id="nc">
+            <div class="nav-wrapper">
+              <a href="#!" class="left">Posts</a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="/users">Home</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{currentUser.first_name}}<i class="material-icons right">arrow_drop_down</i></a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+    </header>
+    <h3>{{user.first_name}}'s Posts!</h3>
+      <div class="container">
+        <div class="row">
+          {{#each user.posts}}
+          <div class="col s4">
+            <br>
+            <img src="{{this.image}}">
+            <br>
+            <a href="/users/{{../user.id}}/posts/{{this.id}}">{{this.name}}</a>
+            <!-- <li>{{this.description}}</li> -->
+            <br>
+
+            </div>
+          {{/each}}
+        </div>
+
+      </div>
+
+
+      <a href="/users/{{user.id}}/posts/new" class="btn btn-default">New Post</a>
+
   </body>
 </html>
