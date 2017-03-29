@@ -4,11 +4,8 @@
   <head>
     <meta charset="utf-8">
     <title>P2</title>
-
-
-
   </head>
-  <body>
+  <body class="login-backg">
     <header>
       <ul id="dropdown1" class="dropdown-content">
           <li><a href="/users/{{currentUser._id}}">My Profile</a></li>
@@ -18,11 +15,12 @@
         </ul>
 
         <div class="navbar-fixed">
-          <nav>
+          <nav id="nc" class="nav-color">
             <div class="nav-wrapper">
               <a href="#!" class="left">Posts</a>
               <ul class="right hide-on-med-and-down">
-
+                <!-- <li><a href="/users/signup/">Signup</a></li>
+                <li><a href="/users/{{currentUser._id}}">Home</a></li> -->
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{currentUser.first_name}}<i class="material-icons right">arrow_drop_down</i></a></li>
               </ul>
@@ -58,11 +56,6 @@
         </div>
       <!-- {{/users}} -->
     </div>
-    <script>
-      // $(document).ready(function() {
-      //   $(".dropdown-button").dropdown({ hover: false });
-      // });
 
-    </script>
   </body>
 </html>

@@ -15,6 +15,10 @@ body {
   background-color: red;
 }
 
+#nc {
+  background-color: black;
+}
+
 a {
   color: #00B7FF;
 }
@@ -44,5 +48,5 @@ img {
 }
 
 .container {
-  
+
 }

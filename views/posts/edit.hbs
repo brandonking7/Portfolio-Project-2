@@ -20,5 +20,40 @@
 
         </div>
       </form>
+      <h3>Creat a new post</h3>
+      <div class="container">
+        <div class="row">
+          <form class="col s12" action="/users/{{user.id}}/posts/{{post.id}}?_method=PUT" method="post">
+            <div class="row">
+              <div class="card panel white">
+
+
+
+
+            <div class="input-field col s12">
+              <label for="name">Name: </label>
+              <input type="text" name="name" value="{{post.name}}"/>
+            </div>
+            <div class="input-field col s12">
+              <label for="description">Description: </label>
+              <input type="text" name="description" value="{{post.description}}">
+            </div>
+            <!-- <div class="input-field col s12">
+              <label for="image">Image</label>
+              <input type="file" name="image">
+              <br>
+            </div> -->
+            <br>
+            <div>
+              <input class="btn btn-default"type="submit" value="Update Post">
+            </div>
+            <br>
+
+            </div>
+           </div>
+          </form>
+        </div>
+
+      </div>
     </body>
 </html>
