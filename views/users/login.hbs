@@ -6,31 +6,32 @@
   </head>
     <body class="login-backg">
       <h3>Login</h3>
-    
+        <div class="container">
+         <div class="center-align">
+          <div class="col s12 m8">
+           <div class="card-panel white">
+              <form action="/sessions/login" method="post">
+               <div class="">
+                <input placeholder="Email" name="email" type="text" class="validate">
+               </div>
+               <br>
+               <div class="">
+                <input placeholder="Password" name="password" type="password" class="validate">
+               </div>
+               <br>
+               <div class="col s12">
+                <input type="submit" class="btn btn-default" value="Submit">
+               </div>
+              </form>
+               <br>
 
-<div class="container">
-<div class="center-align">
-<div class="col s12 m8">
-          <div class="card-panel white">
-            <form action="/sessions/login" method="post">
-            <div class="">
-              <input placeholder="Email" name="email" type="text" class="validate">
-            </div>
-            <br>
-            <div class="">
-              <input placeholder="Password" name="password" type="password" class="validate">
-            </div>
-            <br>
-            <div class="col s12">
-              <input type="submit" class="btn btn-default" value="Submit">
-            </div>
-          </form>
-          <br>
-          <div>
-            <a href="/" class="btn btn-default">Back to Home Page</a>
-          </div>
+           </div>
           </div>
         </div>
+      </div>
+      <br>
+      <div>
+       <a href="/" class="btn btn-primary">Back to Home Page</a>
       </div>
  </body>
 </html>
