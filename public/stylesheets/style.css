@@ -19,6 +19,11 @@ body {
   background-color: white;
 }*/
 
+#post {
+  height: 525px;
+  width: 600px;
+}
+
 #top {
   margin-top: -95px;
   margin-bottom: 125px;

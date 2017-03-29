@@ -16,7 +16,7 @@
         <div class="navbar-fixed">
           <nav id="nc" class="nav-color">
             <div class="nav-wrapper">
-              <a href="#!" class="left">Posts</a>
+              <a href="/users" class="left">Cars</a>
               <ul class="right hide-on-med-and-down">
                 <!-- <li><a href="/users/">Signup</a></li>
                 <li><a href="/users/{{currentUser._id}}">Home</a></li> -->
@@ -30,9 +30,9 @@
     </header>
     <div>
       <h1>Name: {{post.name}}</h1>
-      <img src="{{post.image}}">
+      <img id="post" src="{{post.image}}">
 
-      <h3>Description: {{post.description}}</h3>
+      <p>Description: {{post.description}}</p>
 
       <a href="/users/{{user.id}}/posts/{{post.id}}/edit" class="btn btn-default">Edit Post</a>
     </div>
