@@ -1,38 +1,37 @@
-# Portfolio-Project-2
+# Cars
 
 ## Overview
 
-For project #1, I created a simple game of Blackjack.
+For project #2, I created a Full Stack Web App where users can post about their favorite cars.
 
-Once players come to the site, they are shown an alert with a tutorial. Then then hit deal to be dealt a set of cards where
-the goal of the game is to be the first to 21 or have a bigger score than the dealer period.
+Once the users hit the site can they register then create post that are seen on a live feed. Then can update post and also delete them. They can also update there profile.
 
-**Live site:** <https://brandonking7.github.io/Blackjack/>
+**Live site:** <https://warm-ridge-14864.herokuapp.com>
 
 ## Technologies Used
 
-  * Languages - HTML5, CSS3, Javascript, jQuery
+  * Languages - HTML5, CSS3, Javascript, jQuery, Mongoose, Express, NodeJs
   * Design - Sketch
-  * Project Planning & User Stories - [Trello](https://trello.com/b/ibqDZwPv/blackjack-user-stories)
-  * Sublime Text 3
+  * Project Planning & User Stories - [Trello](https://trello.com/b/MxSAoMXw/project-2)
+  * Atom
 
 
 ## Features
 
-  * SweetAlert, an awesome replacement for JavaScript's alert
-  * Scoreboard
-  * New Game Button
-  * Deal, Hit and Stand buttons
-  * Alerts High winning bet
+  * Authentication
+  * Posts about cars
+  * Update user profile
+
 
 
 ## Wireframe
 
+![Wireframe](https://github.com/brandonking7/Blackjack/blob/master/IMG_0546.png?raw=true)
 ![Wireframe](https://github.com/brandonking7/Blackjack/blob/master/IMG_0546.png?raw=true)
 
 
 ## Future Development
 
 
-  * Make it responsive
-  * Add music at first start
+  * Twitter and Facebook Authentication
+  * Passport Authentication
